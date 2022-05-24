@@ -14,6 +14,6 @@ const studentSchema = new mongoose.Schema({
     required: true,
     min: 6
   }
-})
+});
 
 module.exports = mongoose.model("Student", studentSchema);

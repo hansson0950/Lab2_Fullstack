@@ -9,6 +9,6 @@ const courseSchema = new mongoose.Schema({
     type: String,
     max: 255,
   },
-})
+});
 
 module.exports = mongoose.model("Course", courseSchema);

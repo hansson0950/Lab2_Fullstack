@@ -1,6 +1,4 @@
 import React from "react";
-import reactDom from "react-dom";
-import axios from "axios";
 
 class App extends React.Component {
 
@@ -12,7 +10,6 @@ class App extends React.Component {
       registrations: []
     };
   }
-
 
   componentDidMount() {
     fetch("http://localhost:3000/api/students")
@@ -30,22 +27,57 @@ class App extends React.Component {
 
   render() {
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Student ID</th>
-            <th>Student Name</th>
-            <th>Course Name</th>
-            <th>Time of registration</th>
-          </tr>
-        </thead>
-        <tbody>
-          <td>{this.state.students.map(student => <tr key={student._id}>{student._id}</tr>)}</td>
-          <td>{this.state.students.map(student => <tr key={student._id}>{student.name}</tr>)}</td>
-          <td>{this.state.courses.map(course => <tr key={course._id}>{course.name}</tr>)}</td>
-          <td>{this.state.registrations.map(registration => <tr key={registration._id}>{registration.dateJoined}</tr>)}</td>
-        </tbody>
-      </table>
+      <>
+        <table>
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <th>Course Name</th>
+              <th>Time of registration</th>
+            </tr>
+          </thead>
+          {/* <tbody>
+            <td>{this.state.students.slice(0, 5).map(student => <tr key={student._id}><td key={student._id}>{student._id}</td></tr>)}</td>
+            <td>{this.state.students.slice(0, 5).map(student => <tr key={student._id}><td key={student._id}>{student.name}</td></tr>)}</td>
+            <td>{this.state.courses.slice(0, 5).map(course => <tr key={course._id}><td key={course._id}>{course.name}</td></tr>)}</td>
+            <td>{this.state.registrations.slice(0, 5).map(registration => <tr key={registration._id}><td key={registration._id}>{registration.dateJoined}</td></tr>)}</td>
+          </tbody> */}
+
+          <tbody>
+            <tr>
+              {this.state.students.slice(0, 1).map(student => <td key={student._id}>{student._id}</td>)}
+              {this.state.students.slice(0, 1).map(student => <td key={student._id}>{student.name}</td>)}
+              {this.state.courses.slice(0, 1).map(course => <td key={course._id}>{course.name}</td>)}
+              {this.state.registrations.slice(0, 1).map(registration => <td key={registration._id}>{registration.dateJoined}</td>)}
+            </tr>
+            <tr>
+              {this.state.students.slice(1, 2).map(student => <td key={student._id}>{student._id}</td>)}
+              {this.state.students.slice(1, 2).map(student => <td key={student._id}>{student.name}</td>)}
+              {this.state.courses.slice(1, 2).map(course => <td key={course._id}>{course.name}</td>)}
+              {this.state.registrations.slice(1, 2).map(registration => <td key={registration._id}>{registration.dateJoined}</td>)}
+            </tr>
+            <tr>
+              {this.state.students.slice(2, 3).map(student => <td key={student._id}>{student._id}</td>)}
+              {this.state.students.slice(2, 3).map(student => <td key={student._id}>{student.name}</td>)}
+              {this.state.courses.slice(2, 3).map(course => <td key={course._id}>{course.name}</td>)}
+              {this.state.registrations.slice(2, 3).map(registration => <td key={registration._id}>{registration.dateJoined}</td>)}
+            </tr>
+            <tr>
+              {this.state.students.slice(3, 4).map(student => <td key={student._id}>{student._id}</td>)}
+              {this.state.students.slice(3, 4).map(student => <td key={student._id}>{student.name}</td>)}
+              {this.state.courses.slice(3, 4).map(course => <td key={course._id}>{course.name}</td>)}
+              {this.state.registrations.slice(3, 4).map(registration => <td key={registration._id}>{registration.dateJoined}</td>)}
+            </tr>
+            <tr>
+              {this.state.students.slice(4, 5).map(student => <td key={student._id}>{student._id}</td>)}
+              {this.state.students.slice(4, 5).map(student => <td key={student._id}>{student.name}</td>)}
+              {this.state.courses.slice(4, 5).map(course => <td key={course._id}>{course.name}</td>)}
+              {this.state.registrations.slice(4, 5).map(registration => <td key={registration._id}>{registration.dateJoined}</td>)}
+            </tr>
+          </tbody>
+        </table>
+      </>
     )
   }
 }

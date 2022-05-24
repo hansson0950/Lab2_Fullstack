@@ -13,6 +13,6 @@ const registrationSchema = new mongoose.Schema({
     type: Date,
     required: true,
   }
-})
+});
 
 module.exports = mongoose.model("Registration", registrationSchema);
