@@ -1,13 +1,14 @@
 const express = require("express");
-const app = express();
 const signale = require("signale");
 const mongoose = require("mongoose");
-const students = require("../routes/students");
-const registrations = require("../routes/registrations");
-const courses = require("../routes/courses");
 const cors = require("cors");
+const students = require("./routes/students");
+const registrations = require("./routes/registrations");
+const courses = require("./routes/courses");
 const PORT = process.env.PORT || 3000;
 require("dotenv").config();
+
+const app = express();
 
 app.use(cors());
 

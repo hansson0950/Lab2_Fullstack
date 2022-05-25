@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Registration = require("../models/registration");
+const Registration = require("../models/Registration");
 
 router.get("/", async (req, res) => {
   try {
@@ -9,6 +9,6 @@ router.get("/", async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-});
+})
 
 module.exports = router;
